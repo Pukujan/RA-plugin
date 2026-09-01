@@ -2,9 +2,25 @@
 
 ## Authority and scope
 
-This repository is an experimental adapter/runtime for the Research Assurance program. Program methodology, benchmark policy, scope control, and architecture claims remain owned by `Pukujan/research-assurance`.
+This repository is an experimental adapter/runtime for the Research Assurance program. Program methodology, benchmark policy, scope control, milestone claims, and architecture decisions remain owned by `Pukujan/research-assurance`.
 
 Agents implement the frozen experiment; they do not redefine what counts as success.
+
+If the requested work is broader than this repository's issue scope, **stop and return to the master control plane** rather than silently expanding this repo.
+
+## Fresh-session protocol
+
+A fresh agent with no previous conversation must not infer program state from this repository alone.
+
+Before material work:
+
+1. fetch current `RA-plugin` main, open issues/PRs, and CI;
+2. read this file, `specs/PDD.md`, `specs/SDD.md`, `specs/INVARIANTS.md`, `docs/FAILURE_MODES.md`, `docs/VALIDATION_STRATEGY.md`, and the active issue;
+3. fetch `Pukujan/research-assurance` and read its `AGENTS.md`, current status/next state, and `docs/governance/ORCHESTRATION_PLAYBOOK.md` when program coordination, benchmark interpretation, or scope decisions are involved;
+4. distinguish merged/default-branch truth from open PR proposals;
+5. state the exact active issue, current branch/PR, evidence already available, and smallest next implementation/test step before changing code.
+
+The plugin repository may continue local implementation independently once the program contract and issue are clear. Program scope changes return to `research-assurance`.
 
 ## Shared rules
 
@@ -69,12 +85,12 @@ Luna must not:
 
 1. Freeze schemas/contracts and deterministic tests.
 2. Implement core with no model calls.
-3. Pass fault/property tests.
+3. Pass fault/property/metamorphic tests.
 4. Implement thin OpenCode adapter.
 5. Pass adapter conformance tests.
 6. Implement benchmark runner/evaluator against public development microworlds.
 7. Freeze SHAs before confirmatory evaluation.
-8. Do not start second harness or MCP work until the OpenCode experiment is reviewed.
+8. Do not start second harness or MCP work until the OpenCode experiment is reviewed by the program control plane.
 
 ## Definition of done
 
