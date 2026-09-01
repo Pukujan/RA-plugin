@@ -8,6 +8,14 @@ Its purpose is narrow:
 
 The repository is **not** the Research Assurance control plane, not a universal agent-governance system, and not a replacement for FOSSIL, source-ranker, retrieval-benchmarker, or domain applications.
 
+## Read first
+
+- [`docs/MVP_PLAN.md`](docs/MVP_PLAN.md) — frozen MVP scope, semantic operations, HITL boundary, build gates, provisional success/kill criteria.
+- [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md) — cross-model/harness benchmark design, research microworlds, interruption tests, metrics, contamination controls.
+- [`docs/ADAPTER_PLAN.md`](docs/ADAPTER_PLAN.md) — OpenCode plugin first; second harness and MCP/ChatGPT adapters only after evidence justifies them.
+- [`AGENTS.md`](AGENTS.md) — Terra/Luna implementation ownership and rules.
+- GitHub issue `#1` — executable MVP parent issue and acceptance sequence.
+
 ## Initial architecture
 
 ```text
