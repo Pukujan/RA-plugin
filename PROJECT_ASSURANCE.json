@@ -1,0 +1,313 @@
+{
+  "schema_version": "pam-manifest/0.1.0",
+  "project": {
+    "name": "RA Plugin MVP",
+    "repository": "Pukujan/RA-plugin",
+    "phase": "pre-implementation planning frozen in PR #2; PAM second-adopter preflight"
+  },
+  "methodology": {
+    "repository": "Pukujan/project-assurance-modules",
+    "revision": "a10ad56b7088c1e101e80914a9e00357dbef9120"
+  },
+  "project_facts": {
+    "software": true,
+    "nontrivial": true,
+    "projectization": true,
+    "reusable_systems_possible": true,
+    "horizontal_scope_risk": true,
+    "multi_session": true,
+    "agent_assisted": true,
+    "empirical_quality_claims": true,
+    "benchmark_or_dataset_use": true,
+    "hidden_confirmatory_evaluation": true,
+    "consequential_decisions": true,
+    "durable_provenance_and_decision_lineage": false
+  },
+  "profiles": [
+    {"profile_id": "projectization.software", "version": "0.1.0"},
+    {"profile_id": "continuity.material-work", "version": "0.1.0"},
+    {"profile_id": "benchmark.empirical-work", "version": "0.1.0"},
+    {"profile_id": "provenance.material-decisions", "version": "0.1.0"}
+  ],
+  "modules": [
+    {
+      "module_id": "continuity.structured-handoff",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "RA-plugin explicitly spans fresh sessions, Terra/Luna responsibilities, harness boundaries, and program/repository transfers.",
+      "requirements": [
+        {
+          "requirement_id": "HANDOFF-001",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "AGENTS.md", "note": "Defines fresh-session reconciliation, authority, and material handoff rules."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "HANDOFF-002",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "HANDOFF_STATE.json", "note": "PAM adoption adds a machine-readable current state packet without replacing the existing planning artifacts."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "HANDOFF-003",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "HANDOFF-004",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "AGENTS.md", "note": "Requires re-fetching live RA-plugin and research-assurance state and distinguishing merged truth from open PR proposals before material work."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "HANDOFF-005",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "docs/PAM_ADOPTION.md", "note": "Defines current-state versus historical planning/adoption checkpoint semantics."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "HANDOFF-006",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "AGENTS.md", "note": "Forbids inspection of hidden/confirmatory task labels or seeds."},
+            {"kind": "file", "locator": "docs/EXPERIMENT_PROTOCOL.md", "note": "Keeps hidden confirmatory tasks, labels, oracles, and perturbation seeds outside implementer context."}
+          ],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "projectization.build-vs-reuse",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "The MVP proposes a new deterministic RA core and adapter while naming existing harness, FOSSIL, and transport choices; bespoke implementation must earn itself before implementation begins.",
+      "requirements": [
+        {
+          "requirement_id": "REUSE_001",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/PDD.md", "note": "Defines the narrow experiment capability, constraints, non-goals, and success/kill outcomes."},
+            {"kind": "file", "locator": "docs/MVP_PLAN.md", "note": "Defines the six semantic operations, fail-open/fail-closed boundary, and MVP gates."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_002",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_003",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_004",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_005",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "REUSE_006",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "projectization.scope-boundary",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "The experiment has multiple attractive adjacent mechanisms and explicitly defers source ranking, semantic verification, GraphRAG, MCP-first work, and second-harness expansion.",
+      "requirements": [
+        {
+          "requirement_id": "SCOPE_001",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "specs/PDD.md", "note": "States the MVP goal, hypotheses, user-visible capability, and valid outcomes."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_002",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "docs/MVP_PLAN.md", "note": "Lists explicit MVP non-scope, including source ranking, semantic claim verification, GraphRAG, generic governance, MCP-first architecture, and premature second-harness work."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_003",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "docs/FAILURE_MODES.md", "note": "Separates mitigate-now, measure, defer, and not-applicable failures without auto-expanding the MVP."},
+            {"kind": "file", "locator": "docs/ADAPTER_PLAN.md", "note": "Defers second harness and MCP until explicit evidence gates are met."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_004",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "docs/MVP_PLAN.md", "note": "Build gates and valid negative outcomes constrain admission of later mechanisms."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "SCOPE_005",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "README.md", "note": "Separates the Research Assurance program/control plane from the bounded RA-plugin runtime/adapter experiment."},
+            {"kind": "file", "locator": "AGENTS.md", "note": "Returns program methodology, benchmark interpretation, and scope changes to Pukujan/research-assurance."}
+          ],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "planning.foundation",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "The project is nontrivial pre-implementation software work with explicit product, architecture, invariant, and failure boundaries.",
+      "requirements": [
+        {
+          "requirement_id": "PLAN_FOUNDATION_001",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/PDD.md", "note": "Defines problem, goal, hypotheses, non-goals, success measures, and valid negative outcomes."},
+            {"kind": "file", "locator": "docs/MVP_PLAN.md", "note": "Defines current MVP outcome, gates, non-scope, and kill outcomes."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PLAN_FOUNDATION_002",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/SDD.md", "note": "Defines deterministic core, local store, canonical operation boundary, adapter responsibilities, state, persistence, and trust boundaries."},
+            {"kind": "file", "locator": "AGENTS.md", "note": "Defines program-vs-plugin authority and Terra/Luna implementation ownership."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PLAN_FOUNDATION_003",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "specs/INVARIANTS.md", "note": "Defines normative MVP invariants including review binding, replay, idempotency, exact identity, holdout isolation, and no verified flag."},
+            {"kind": "file", "locator": "docs/VALIDATION_STRATEGY.md", "note": "Maps invariants to deterministic, property, metamorphic, fault, mutation, and adapter-conformance evidence."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PLAN_FOUNDATION_004",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "docs/FAILURE_MODES.md", "note": "Maintains an MVP-scoped failure register with current mitigation/validation and scope disposition."}],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "engineering.swe-ci-foundation",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "The MVP is maintained software, but its implementation/package/CI substrate has not started on the planning branch.",
+      "requirements": [
+        {"requirement_id": "SWE_CI_001", "state": "pending", "evidence": [], "rationale": null},
+        {"requirement_id": "SWE_CI_002", "state": "pending", "evidence": [], "rationale": null},
+        {"requirement_id": "SWE_CI_003", "state": "pending", "evidence": [], "rationale": null},
+        {"requirement_id": "SWE_CI_004", "state": "pending", "evidence": [], "rationale": null},
+        {
+          "requirement_id": "SWE_CI_005",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "benchmark.integrity",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "The MVP is explicitly an empirical paired experiment with frozen microworlds and a hidden confirmatory boundary.",
+      "requirements": [
+        {
+          "requirement_id": "BENCH_INT_001",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "docs/EXPERIMENT_PROTOCOL.md", "note": "Defines the paired same-model/same-harness causal contrast, target metrics, and invalid cross-harness inference boundaries."},
+            {"kind": "file", "locator": "specs/PDD.md", "note": "Defines the exact research hypotheses and valid negative outcomes."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "BENCH_INT_002",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "BENCH_INT_003",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "docs/EXPERIMENT_PROTOCOL.md", "note": "Separates public development cases from hidden confirmatory material and freezes implementation/evaluator identities before confirmatory exposure."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "BENCH_INT_004",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "BENCH_INT_005",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        }
+      ]
+    },
+    {
+      "module_id": "provenance.decision-lineage",
+      "version": "0.1.0",
+      "disposition": "required",
+      "rationale": "Architecture, benchmark admission, human-review authority, and program/repository ownership are consequential decisions whose proposal/acceptance status must remain distinguishable.",
+      "requirements": [
+        {
+          "requirement_id": "PROV_LINEAGE_001",
+          "state": "satisfied",
+          "evidence": [{"kind": "file", "locator": "AGENTS.md", "note": "Defines which program-level scope/benchmark/architecture decisions return to research-assurance rather than remaining local plugin state."}],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PROV_LINEAGE_002",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PROV_LINEAGE_003",
+          "state": "pending",
+          "evidence": [],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PROV_LINEAGE_004",
+          "state": "satisfied",
+          "evidence": [
+            {"kind": "file", "locator": "README.md", "note": "Names research-assurance as program methodology/control-plane owner and RA-plugin as the bounded runtime/adapter experiment."},
+            {"kind": "file", "locator": "AGENTS.md", "note": "Requires live repository state for execution and sends program decisions back to the control plane."}
+          ],
+          "rationale": null
+        },
+        {
+          "requirement_id": "PROV_LINEAGE_005",
+          "state": "not_applicable",
+          "evidence": [],
+          "rationale": "RA-plugin explicitly does not make FOSSIL or another external provenance runtime a mandatory MVP dependency, and this adoption claims no external ingest, review, or promotion receipt."
+        }
+      ]
+    }
+  ]
+}
