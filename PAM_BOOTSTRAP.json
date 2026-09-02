@@ -1,0 +1,40 @@
+{
+  "schema_version": "pam-bootstrap/0.1.0",
+  "source": {
+    "repository": "Pukujan/project-assurance-modules",
+    "remote": "https://github.com/Pukujan/project-assurance-modules.git",
+    "requested_revision": {
+      "kind": "git_commit",
+      "value": "a10ad56b7088c1e101e80914a9e00357dbef9120"
+    },
+    "resolved_commit": "a10ad56b7088c1e101e80914a9e00357dbef9120"
+  },
+  "acquisition": {
+    "mechanism": "git_fetch_exact_revision",
+    "fetch_scope": "single_revision",
+    "checkout_mode": "detached"
+  },
+  "verification": {
+    "required": true,
+    "method": "git_rev_parse_head",
+    "expected_commit": "a10ad56b7088c1e101e80914a9e00357dbef9120",
+    "fail_on_mismatch": true
+  },
+  "start": {
+    "kind": "manifest",
+    "locator": "PROJECT_ASSURANCE.json",
+    "must_exist_before_routing": true
+  },
+  "content_identity": {
+    "authoritative_basis": "git_object_id",
+    "working_tree_bytes_authoritative": false,
+    "line_ending_normalization_authoritative": false,
+    "note": "The PAM methodology identity is the exact Git commit. Project artifacts use repository object identity or explicit content digests rather than platform-transformed working-tree hashes."
+  },
+  "failure_behavior": {
+    "acquisition_unavailable": "stop_before_routing",
+    "revision_unavailable": "stop_before_routing",
+    "revision_mismatch": "stop_before_routing",
+    "start_missing": "stop_before_routing"
+  }
+}
