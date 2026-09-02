@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-python@v7
         with:
@@ -26,7 +28,10 @@ jobs:
           PAM_DIR="$RUNNER_TEMP/pam"
           git init "$PAM_DIR"
           git -C "$PAM_DIR" remote add origin https://github.com/Pukujan/project-assurance-modules.git
-          git -C "$PAM_DIR" fetch --depth=1 origin a10ad56b7088c1e101e80914a9e00357dbef9120
+          GIT_TERMINAL_PROMPT=0 git \
+            -c credential.helper= \
+            -c http.https://github.com/.extraheader= \
+            -C "$PAM_DIR" fetch --depth=1 origin a10ad56b7088c1e101e80914a9e00357dbef9120
           git -C "$PAM_DIR" checkout --detach FETCH_HEAD
           test "$(git -C "$PAM_DIR" rev-parse HEAD)" = "a10ad56b7088c1e101e80914a9e00357dbef9120"
           echo "PAM_DIR=$PAM_DIR" >> "$GITHUB_ENV"
