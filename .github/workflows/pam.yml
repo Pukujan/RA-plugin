@@ -1,0 +1,44 @@
+name: PAM adoption
+
+on:
+  pull_request:
+  push:
+    branches:
+      - adopt/pam-v0.2
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Acquire exact PAM revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          PAM_DIR="$RUNNER_TEMP/pam"
+          git init "$PAM_DIR"
+          git -C "$PAM_DIR" remote add origin https://github.com/Pukujan/project-assurance-modules.git
+          git -C "$PAM_DIR" fetch --depth=1 origin a10ad56b7088c1e101e80914a9e00357dbef9120
+          git -C "$PAM_DIR" checkout --detach FETCH_HEAD
+          test "$(git -C "$PAM_DIR" rev-parse HEAD)" = "a10ad56b7088c1e101e80914a9e00357dbef9120"
+          echo "PAM_DIR=$PAM_DIR" >> "$GITHUB_ENV"
+
+      - name: Install PAM validator dependencies
+        run: python -m pip install -e "$PAM_DIR"
+
+      - name: Validate adopter-owned PAM state
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$PAM_DIR"
+          python -m scripts.pam_validate "$GITHUB_WORKSPACE/PROJECT_ASSURANCE.json"
+          python -m scripts.pam_handoff "$GITHUB_WORKSPACE/HANDOFF_STATE.json"
+          python -m scripts.pam_bootstrap "$GITHUB_WORKSPACE/PAM_BOOTSTRAP.json"
