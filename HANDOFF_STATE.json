@@ -4,14 +4,14 @@
   "project": {
     "name": "RA Plugin MVP",
     "repository": "Pukujan/RA-plugin",
-    "phase": "pre-implementation planning frozen in PR #2; PAM second-adopter preflight"
+    "phase": "pre-implementation planning frozen in PR #2; PAM second-adopter validation complete"
   },
   "work": {
     "owning_repository": "Pukujan/RA-plugin",
     "issue": 1,
     "branch": "adopt/pam-v0.2",
-    "pr": null,
-    "state": "validating"
+    "pr": 3,
+    "state": "complete"
   },
   "methodology": {
     "repository": "Pukujan/project-assurance-modules",
@@ -32,7 +32,7 @@
       "role": "Second-adopter project plan and executable issue context; PR #2 remains unmerged.",
       "locator": "Pukujan/RA-plugin#2",
       "observed_identity": {"kind": "git_commit", "value": "7b47d80221cd2c5eaaed23a23ab2fff8d4189681"},
-      "tested_identity": null
+      "tested_identity": {"kind": "git_commit", "value": "7b47d80221cd2c5eaaed23a23ab2fff8d4189681"}
     },
     {
       "name": "Research Assurance control plane",
@@ -43,10 +43,14 @@
     }
   ],
   "validation": {
-    "passed": [],
+    "passed": [
+      {
+        "name": "Exact-PAM second-adopter validation",
+        "evidence": "RA-plugin Actions run 33575271900 completed successfully at adopter head 3bb107a4eca1bb736947cfe544d52356f17f9809 after fetching, detached-checking-out, and verifying PAM a10ad56b7088c1e101e80914a9e00357dbef9120; PROJECT_ASSURANCE.json, HANDOFF_STATE.json, and PAM_BOOTSTRAP.json all validated."
+      }
+    ],
     "failed": [],
     "not_run": [
-      "Exact-PAM adopter validation workflow",
       "RA-001 versioned contract/meta-tests",
       "RA-plugin implementation SWE/CI foundation",
       "benchmark blind/hidden packaging leakage validation"
@@ -55,8 +59,8 @@
   "next_action": {
     "repository": "Pukujan/RA-plugin",
     "issue": 1,
-    "action": "Run exact-revision PAM validation over PROJECT_ASSURANCE.json, HANDOFF_STATE.json, and PAM_BOOTSTRAP.json, then review the remaining pending requirements before RA-001 implementation.",
-    "acceptance": "The adopter artifacts validate against PAM revision a10ad56b7088c1e101e80914a9e00357dbef9120 without bespoke methodology edits; any incompatibility is recorded as a PAM defect or explicit project-specific N/A."
+    "action": "Before RA-001 implementation, review the remaining build-vs-reuse requirements and record serious existing candidates, material trade-offs, cheap compatibility probes where proportionate, and the resulting reuse/configure/wrap/extend/build-new disposition.",
+    "acceptance": "REUSE_002 through REUSE_006 are either evidence-backed or explicitly N/A under their module rules without changing the frozen PAM methodology solely for this adopter; no model benchmark is started."
   },
   "blockers": [
     "RA-plugin planning PR #2 is open and unmerged; adoption is stacked on its exact head rather than treated as default-branch truth.",
@@ -87,7 +91,7 @@
   "reconciliation": {
     "live_state_wins": true,
     "checks": [
-      "Re-fetch RA-plugin issue #1, PR #2, the adoption PR, and relevant CI before implementation mutation.",
+      "Re-fetch RA-plugin issue #1, PR #2, PR #3, and relevant CI before implementation mutation.",
       "Re-fetch Pukujan/research-assurance program state when scope, benchmark interpretation, or program architecture is implicated.",
       "Verify the pinned PAM revision still resolves exactly before using its schemas or validators.",
       "Treat merged/default-branch state as live truth and open PR content as proposals unless explicitly approved."
@@ -99,8 +103,8 @@
     "policy": "Confirmatory task manifests, labels, gold, perturbation seeds, and per-run hidden failure details are excluded from agent-visible handoff and implementation state; only the process boundary is recorded."
   },
   "handoff": {
-    "created_from_identity": {"kind": "git_commit", "value": "7b47d80221cd2c5eaaed23a23ab2fff8d4189681"},
-    "created_at": "2026-09-02T00:05:34Z",
-    "reason": "material_plan_change"
+    "created_from_identity": {"kind": "git_commit", "value": "3bb107a4eca1bb736947cfe544d52356f17f9809"},
+    "created_at": "2026-09-02T00:25:45Z",
+    "reason": "validation_transition"
   }
 }
