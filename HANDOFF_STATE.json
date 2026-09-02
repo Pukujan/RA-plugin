@@ -1,0 +1,106 @@
+{
+  "schema_version": "pam-handoff/0.1.0",
+  "state_kind": "current",
+  "project": {
+    "name": "RA Plugin MVP",
+    "repository": "Pukujan/RA-plugin",
+    "phase": "pre-implementation planning frozen in PR #2; PAM second-adopter preflight"
+  },
+  "work": {
+    "owning_repository": "Pukujan/RA-plugin",
+    "issue": 1,
+    "branch": "adopt/pam-v0.2",
+    "pr": null,
+    "state": "validating"
+  },
+  "methodology": {
+    "repository": "Pukujan/project-assurance-modules",
+    "revision": "a10ad56b7088c1e101e80914a9e00357dbef9120",
+    "modules": [
+      {"module_id": "continuity.structured-handoff", "version": "0.1.0"},
+      {"module_id": "projectization.build-vs-reuse", "version": "0.1.0"},
+      {"module_id": "projectization.scope-boundary", "version": "0.1.0"},
+      {"module_id": "planning.foundation", "version": "0.1.0"},
+      {"module_id": "engineering.swe-ci-foundation", "version": "0.1.0"},
+      {"module_id": "benchmark.integrity", "version": "0.1.0"},
+      {"module_id": "provenance.decision-lineage", "version": "0.1.0"}
+    ]
+  },
+  "components": [
+    {
+      "name": "RA-plugin planning baseline",
+      "role": "Second-adopter project plan and executable issue context; PR #2 remains unmerged.",
+      "locator": "Pukujan/RA-plugin#2",
+      "observed_identity": {"kind": "git_commit", "value": "7b47d80221cd2c5eaaed23a23ab2fff8d4189681"},
+      "tested_identity": null
+    },
+    {
+      "name": "Research Assurance control plane",
+      "role": "Program methodology, benchmark interpretation, and program-scope authority; reference only for this adopter reconciliation.",
+      "locator": "Pukujan/research-assurance#18",
+      "observed_identity": {"kind": "git_commit", "value": "4c1bb86b8d02dcf2a112092d69b9318712aaec0d"},
+      "tested_identity": null
+    }
+  ],
+  "validation": {
+    "passed": [],
+    "failed": [],
+    "not_run": [
+      "Exact-PAM adopter validation workflow",
+      "RA-001 versioned contract/meta-tests",
+      "RA-plugin implementation SWE/CI foundation",
+      "benchmark blind/hidden packaging leakage validation"
+    ]
+  },
+  "next_action": {
+    "repository": "Pukujan/RA-plugin",
+    "issue": 1,
+    "action": "Run exact-revision PAM validation over PROJECT_ASSURANCE.json, HANDOFF_STATE.json, and PAM_BOOTSTRAP.json, then review the remaining pending requirements before RA-001 implementation.",
+    "acceptance": "The adopter artifacts validate against PAM revision a10ad56b7088c1e101e80914a9e00357dbef9120 without bespoke methodology edits; any incompatibility is recorded as a PAM defect or explicit project-specific N/A."
+  },
+  "blockers": [
+    "RA-plugin planning PR #2 is open and unmerged; adoption is stacked on its exact head rather than treated as default-branch truth.",
+    "PAM v0.2 PR #5 is open and unmerged; this adopter pins its exact tested revision instead of claiming a stable release.",
+    "RA-001 deterministic contracts have not been implemented yet."
+  ],
+  "scope": {
+    "do_not_start": [
+      "Second harness before OpenCode evidence meets the existing entry gate",
+      "MCP-first or transport-driven core architecture",
+      "Source-ranker or semantic claim-verifier integration",
+      "GraphRAG, ontology, or universal coding governance",
+      "Confirmatory model runs before deterministic core/evaluator identities are frozen"
+    ]
+  },
+  "decisions_not_to_reverse": [
+    "OpenCode remains the first adapter and the core remains transport-neutral.",
+    "Research Assurance remains the authority for program-level methodology, benchmark interpretation, and scope decisions.",
+    "Ordinary research fails open while reviewed/accepted promotion fails closed when the required receipt is unavailable.",
+    "Hidden confirmatory labels, answers, seeds, and tasks remain outside implementer and evaluated-agent context.",
+    "PAM is methodology/config/schema/evidence-state for this adopter, not an RA-plugin runtime dependency."
+  ],
+  "open_questions": [
+    "Which exact existing libraries or internal components can satisfy portions of the proposed deterministic RA core before bespoke implementation is authorized?",
+    "What exact public-development and later confirmatory dataset/manifests will bind the first OpenCode experiment?",
+    "What durable program-level decision-lineage record will distinguish proposed PR #2 architecture from owner-accepted architecture?"
+  ],
+  "reconciliation": {
+    "live_state_wins": true,
+    "checks": [
+      "Re-fetch RA-plugin issue #1, PR #2, the adoption PR, and relevant CI before implementation mutation.",
+      "Re-fetch Pukujan/research-assurance program state when scope, benchmark interpretation, or program architecture is implicated.",
+      "Verify the pinned PAM revision still resolves exactly before using its schemas or validators.",
+      "Treat merged/default-branch state as live truth and open PR content as proposals unless explicitly approved."
+    ],
+    "stale_state_behavior": "stop_and_reconcile"
+  },
+  "hidden_evaluation": {
+    "agent_visible_hidden_material": false,
+    "policy": "Confirmatory task manifests, labels, gold, perturbation seeds, and per-run hidden failure details are excluded from agent-visible handoff and implementation state; only the process boundary is recorded."
+  },
+  "handoff": {
+    "created_from_identity": {"kind": "git_commit", "value": "7b47d80221cd2c5eaaed23a23ab2fff8d4189681"},
+    "created_at": "2026-09-02T00:05:34Z",
+    "reason": "material_plan_change"
+  }
+}
