@@ -10,6 +10,7 @@ from pathlib import Path
 from .adapter import OpenCodeAdapter
 from .benchmark import run_development_benchmark
 from .core import SessionCore
+from .pilot import run_pilot
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -17,6 +18,9 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
     demo = sub.add_parser("dev-benchmark", help="run visible deterministic development fixtures")
     demo.add_argument("output", type=Path)
+    pilot = sub.add_parser("pilot", help="run paired OpenCode pilot on public microworlds")
+    pilot.add_argument("output", type=Path)
+    pilot.add_argument("models", nargs="+", help="exact OpenCode model identifiers")
     op = sub.add_parser("op", help="dispatch one canonical operation from JSON")
     op.add_argument("state", type=Path)
     op.add_argument("operation")
@@ -25,6 +29,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if args.command == "dev-benchmark":
         print(json.dumps(run_development_benchmark(args.output), indent=2, ensure_ascii=False))
+        return 0
+    if args.command == "pilot":
+        print(json.dumps(run_pilot(args.output, args.models), indent=2, ensure_ascii=False))
         return 0
     adapter = OpenCodeAdapter(SessionCore(args.state))
     try:
