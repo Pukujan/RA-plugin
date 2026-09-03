@@ -1,0 +1,14 @@
+{
+  "core_adapter_evaluator_sha": "8bac8bd37d13cbfdba1179acc34a41606d8bb3f6",
+  "pilot_runner_sha": "0eb533689a4be889c43658585c5910de4025f4e7",
+  "opencode_version": "1.18.21",
+  "models": [
+    "openrouter/minimax/minimax-m3",
+    "openrouter/xiaomi/mimo-v2.5-pro"
+  ],
+  "task_manifest": "public microworlds in ra_plugin.benchmark.PUBLIC_MICROWORLDS",
+  "pair_count": 14,
+  "run_count": 28,
+  "holdout_visibility": "public-microworlds-only",
+  "review_boundary": "No human-review receipt was fabricated; reviewed promotion remains fail-closed."
+}
