@@ -43,6 +43,12 @@ hidden-holdout or confirmatory claim.  No human-review receipts were
 fabricated; all RA promotion remains review-pending and fail-closed until a
 real reviewer acts.
 
+On the visible pilot only, the derived decision is
+`NO_MEASURABLE_BENEFIT_ON_PUBLIC_PILOT`: final-decision accuracy and evidence
+recall were unchanged, while interruption recovery improved from 0.857 to
+1.000 (16.7% relative, below the 25% planning target).  This is a scoped
+empirical outcome, not a claim about unseen tasks or other models.
+
 ## Remaining gate
 
 Before any confirmatory campaign or M2 work, the owner must provide a real
