@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MEASURABLE_BENEFIT_ON_PUBLIC_PILOT",
+  "basis": {
+    "final_decision_accuracy_delta_ra_minus_baseline": 0.0,
+    "supporting_evidence_recall_delta_ra_minus_baseline": 0.0,
+    "unsupported_claim_rate_delta_ra_minus_baseline": 0.0,
+    "interruption_recovery_baseline": 0.8571428571428571,
+    "interruption_recovery_ra": 1.0,
+    "interruption_recovery_relative_improvement": 0.1666666666666667,
+    "protocol_failure_rate_ra": 0.0,
+    "average_elapsed_ms_baseline": 9056.0,
+    "average_elapsed_ms_ra": 9743.357142857143,
+    "median_overhead_target": 0.30
+  },
+  "interpretation": "The public pilot shows a small interruption-recovery signal but no final-decision or evidence-recall improvement; the 16.7% relative recovery gain is below the 25% planning target.",
+  "scope": "public-microworlds-only; not a hidden confirmatory result",
+  "review_boundary": "No human-review receipts were fabricated; reviewed promotion remains fail-closed."
+}
